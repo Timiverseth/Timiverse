@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oladunjoye David Olusayo — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-muted: #666;
+    --ink-faint: #aaa;
+    --paper: #faf9f6;
+    --card: #fff;
+    --accent: #c8500a;
+    --accent-light: #f5ebe3;
+    --border: #e8e4dc;
+    --teal: #0f7060;
+    --teal-light: #e1f3ee;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(250,249,246,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px; font-weight: 400;
+    color: var(--ink-muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    padding: 140px 2rem 80px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-desc {
+    font-size: 1.1rem;
+    color: var(--ink-muted);
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem;
+  }
+  .tag {
+    font-size: 12px; font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+  }
+  .tag-teal { background: var(--teal-light); color: var(--teal); }
+  .tag-accent { background: var(--accent-light); color: var(--accent); }
+  .tag-gray { background: #eeebe4; color: #555; }
+
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px;
+    font-size: 14px; font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--border);
+  }
+  .btn-outline:hover { border-color: var(--ink); }
+
+  /* DIVIDER */
+  .divider {
+    max-width: 880px; margin: 0 auto;
+    border: none; border-top: 1px solid var(--border);
+  }
+
+  /* SECTIONS */
+  section {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 64px 2rem;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+  .section-sub {
+    color: var(--ink-muted);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    line-height: 1.7;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .service-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .service-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+    transform: translateY(-2px);
+  }
+  .service-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .icon-teal { background: var(--teal-light); }
+  .icon-accent { background: var(--accent-light); }
+  .icon-gray { background: #eeebe4; }
+  .service-card h3 {
+    font-size: 15px; font-weight: 500;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .service-card p {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.65;
+  }
+
+  /* PROJECTS */
+  .projects-list { display: flex; flex-direction: column; gap: 20px; }
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: box-shadow 0.2s;
+  }
+  .project-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+  .project-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--border);
+    line-height: 1;
+    min-width: 40px;
+    margin-top: 2px;
+  }
+  .project-body { flex: 1; }
+  .project-body h3 {
+    font-size: 15px; font-weight: 500;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .project-body p {
+    font-size: 13.5px; color: var(--ink-muted);
+    line-height: 1.65; margin-bottom: 12px;
+  }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ptag {
+    font-size: 11px; font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: #f0ede6;
+    color: #555;
+    letter-spacing: 0.02em;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .skill-group h4 {
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 12px;
+  }
+  .skill-list { list-style: none; }
+  .skill-list li {
+    font-size: 14px; color: var(--ink-muted);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .skill-list li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .about-grid p {
+    font-size: 15px; color: var(--ink-muted);
+    line-height: 1.85; margin-bottom: 1rem;
+  }
+  .about-stats {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .stat-row {
+    padding: 18px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .stat-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label { font-size: 12.5px; color: var(--ink-muted); }
+
+  /* CONTACT */
+  .contact-inner {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 16px;
+    padding: 52px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 32px;
+  }
+  .contact-inner .section-title { color: #fff; }
+  .contact-inner p { color: rgba(255,255,255,0.6); margin-top: 8px; max-width: 400px; }
+  .contact-links { display: flex; flex-direction: column; gap: 10px; }
+  .contact-link {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px; color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-link:hover { color: #fff; }
+  .contact-link span { font-size: 16px; }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 600px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .contact-inner { padding: 32px 24px; }
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 1rem; }
+    .hero { padding: 110px 1.25rem 60px; }
+    section { padding: 48px 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Oladunjoye David</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero fade-up visible">
+  <p class="hero-eyebrow">Available for remote work</p>
+  <h1>Automation.<br><em>Data. Words.</em><br>Delivered.</h1>
+  <p class="hero-desc">
+    Freelancer and educator based in Lagos &amp; Ibadan, Nigeria. I build intelligent workflows, process data accurately, and provide reliable remote support for teams across the globe.
+  </p>
+  <div class="hero-tags">
+    <span class="tag tag-teal">n8n Automation</span>
+    <span class="tag tag-teal">AI Workflows</span>
+    <span class="tag tag-accent">Transcription</span>
+    <span class="tag tag-accent">Chat Operations</span>
+    <span class="tag tag-gray">B.Sc Microbiology</span>
+    <span class="tag tag-gray">HTML &amp; CSS</span>
+  </div>
+  <div class="cta-row">
+    <a href="#projects" class="btn btn-primary">View my work</a>
+    <a href="#contact" class="btn btn-outline">Get in touch</a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-label">What I offer</p>
+  <h2 class="section-title">How I can help you</h2>
+  <p class="section-sub">Flexible, remote-ready services for individuals and growing teams.</p>
+  <div class="services-grid">
+
+    <div class="service-card fade-up">
+      <div class="service-icon icon-teal">⚙️</div>
+      <h3>Workflow Automation</h3>
+      <p>Custom n8n automations that eliminate repetitive tasks — connecting your tools, processing data, and triggering actions automatically.</p>
+    </div>
+
+    <div class="service-card fade-up">
+      <div class="service-icon icon-teal">🤖</div>
+      <h3>AI-Powered Systems</h3>
+      <p>Intelligent pipelines using large language models — content repurposing, lead scoring, smart email handling, and document processing.</p>
+    </div>
+
+    <div class="service-card fade-up">
+      <div class="service-icon icon-accent">💬</div>
+      <h3>Chat Operations</h3>
+      <p>Reliable, professional live chat support and moderation. Clear communicator with fast response times, available for remote roles.</p>
+    </div>
+
+    <div class="service-card fade-up">
+      <div class="service-icon icon-accent">🎧</div>
+      <h3>Transcription</h3>
+      <p>Accurate audio and video transcription — interviews, meetings, podcasts, and lectures — with attention to detail and fast turnaround.</p>
+    </div>
+
+    <div class="service-card fade-up">
+      <div class="service-icon icon-gray">🔬</div>
+      <h3>Science Content</h3>
+      <p>Biology and science content creation backed by a B.Sc in Microbiology — suitable for educational platforms, blogs, and review tasks.</p>
+    </div>
+
+    <div class="service-card fade-up">
+      <div class="service-icon icon-gray">🖥️</div>
+      <h3>Web Basics (HTML/CSS)</h3>
+      <p>Simple, clean web pages and email templates. Comfortable with HTML and CSS for lightweight front-end tasks and layouts.</p>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">Automation portfolio</p>
+  <h2 class="section-title">Selected projects</h2>
+  <p class="section-sub">Built with n8n, integrated with real-world APIs and AI models.</p>
+  <div class="projects-list">
+
+    <div class="project-card fade-up">
+      <div class="project-num">01</div>
+      <div class="project-body">
+        <h3>Slack Daily Summary Bot</h3>
+        <p>An automated workflow that aggregates key activity across channels and delivers a formatted daily digest to a Slack workspace — reducing information overload for distributed teams.</p>
+        <div class="project-tags">
+          <span class="ptag">n8n</span><span class="ptag">Slack API</span><span class="ptag">Scheduling</span><span class="ptag">Message Formatting</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-up">
+      <div class="project-num">02</div>
+      <div class="project-body">
+        <h3>Lead Scoring CRM Automation</h3>
+        <p>Automatically scores and segments incoming leads based on defined criteria, then routes them to the appropriate CRM stage — enabling sales teams to prioritize high-value prospects.</p>
+        <div class="project-tags">
+          <span class="ptag">n8n</span><span class="ptag">CRM Integration</span><span class="ptag">Lead Scoring</span><span class="ptag">Data Routing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-up">
+      <div class="project-num">03</div>
+      <div class="project-body">
+        <h3>AI Content Repurposer</h3>
+        <p>Takes a single piece of long-form content and uses an AI model to automatically generate platform-specific variants — blog post, LinkedIn update, Twitter thread, and email newsletter.</p>
+        <div class="project-tags">
+          <span class="ptag">n8n</span><span class="ptag">OpenAI</span><span class="ptag">Content Strategy</span><span class="ptag">Multi-platform</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-up">
+      <div class="project-num">04</div>
+      <div class="project-body">
+        <h3>Smart Email Assistant</h3>
+        <p>An AI-powered inbox workflow that classifies incoming emails by intent, drafts context-aware replies, and flags urgent messages — cutting email management time significantly.</p>
+        <div class="project-tags">
+          <span class="ptag">n8n</span><span class="ptag">Gmail API</span><span class="ptag">AI Classification</span><span class="ptag">Draft Generation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-up">
+      <div class="project-num">05</div>
+      <div class="project-body">
+        <h3>Document Processing Pipeline</h3>
+        <p>Extracts, structures, and routes information from uploaded documents (PDFs, forms) using AI — automating data entry and downstream actions without manual review.</p>
+        <div class="project-tags">
+          <span class="ptag">n8n</span><span class="ptag">PDF Extraction</span><span class="ptag">AI Parsing</span><span class="ptag">Data Pipeline</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-up">
+      <div class="project-num">06</div>
+      <div class="project-body">
+        <h3>Relay — 3-Stage HITL Content Pipeline</h3>
+        <p>A multi-agent AI content production system featuring three specialised AI personas (Sofia, Marcus, Taylor) operating as a real creative team — each separated by a human approval gate. Built for n8n's May Monthly Challenge. Sofia proposes content angles, Marcus writes the draft, and Taylor handles final QC — with intelligent feedback loops that route content back to any stage based on human decisions. Approved posts are automatically logged to Google Sheets.</p>
+        <div class="project-tags">
+          <span class="ptag">n8n</span><span class="ptag">Multi-agent AI</span><span class="ptag">GPT-4o</span><span class="ptag">Human-in-the-Loop</span><span class="ptag">Google Sheets</span><span class="ptag">Content Automation</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<section>
+  <p class="section-label">Toolkit</p>
+  <h2 class="section-title">Skills &amp; tools</h2>
+  <div class="skills-grid fade-up">
+    <div class="skill-group">
+      <h4>Automation</h4>
+      <ul class="skill-list">
+        <li>n8n (self-hosted)</li>
+        <li>Webhook integration</li>
+        <li>API connections</li>
+        <li>Workflow scheduling</li>
+        <li>Error handling</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h4>AI &amp; Data</h4>
+      <ul class="skill-list">
+        <li>OpenAI / Claude APIs</li>
+        <li>Prompt engineering</li>
+        <li>Data transformation</li>
+        <li>JSON processing</li>
+        <li>Document extraction</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h4>Remote Services</h4>
+      <ul class="skill-list">
+        <li>Live chat support</li>
+        <li>Audio transcription</li>
+        <li>Content moderation</li>
+        <li>Data entry</li>
+        <li>Research assistance</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h4>Other</h4>
+      <ul class="skill-list">
+        <li>HTML &amp; CSS</li>
+        <li>B.Sc Microbiology</li>
+        <li>Science writing</li>
+        <li>Physics &amp; Maths tuition</li>
+        <li>Microsoft Office</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">Background</p>
+  <h2 class="section-title">About me</h2>
+  <div class="about-grid">
+    <div>
+      <p>I'm Oladunjoye David Olusayo — a freelance automation specialist and educator based in Lagos and Ibadan, Nigeria. I hold a Bachelor's degree in Microbiology and have since built a parallel career in intelligent workflow automation using n8n and AI-powered tools.</p>
+      <p>Alongside my technical work, I teach Physics and Mathematics to secondary school students, which has sharpened my ability to communicate complex ideas clearly — a skill I bring to every client engagement.</p>
+      <p>I'm available for remote positions in automation, chat operations, transcription, and content work. I'm reliable, self-directed, and comfortable working across time zones.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-row">
+        <div class="stat-val">5+</div>
+        <div class="stat-label">Automation workflows built</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-val">B.Sc</div>
+        <div class="stat-label">Microbiology, University graduate</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-val">n8n</div>
+        <div class="stat-label">Self-hosted automation platform</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-val">GMT+1</div>
+        <div class="stat-label">Lagos &amp; Ibadan, Nigeria</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner fade-up">
+    <div>
+      <h2 class="section-title">Let's work together</h2>
+      <p>Open to freelance projects, remote roles, and long-term contracts. Reach out and I'll respond within 24 hours.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:oladunjoyedavid39@gmail.com" class="contact-link">
+        <span>✉</span> oladunjoyedavid39@gmail.com
+      </a>
+      <a href="https://www.upwork.com/freelancers/~01640a0a72bae56ff5" class="contact-link" target="_blank">
+        <span>↗</span> Upwork profile
+      </a>
+      <a href="https://www.fiverr.com/users/timiverse/seller_dashboard" class="contact-link" target="_blank">
+        <span>↗</span> Fiverr profile
+      </a>
+      <a href="#" class="contact-link">
+        <span>📍</span> Lagos &amp; Ibadan, Nigeria
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Oladunjoye David Olusayo · Built for freelance use
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:1000;font-family:'DM Sans',sans-serif;">
+  <div id="chat-box" style="display:none;width:340px;height:460px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;overflow:hidden;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.4);">
+    <div style="background:#c8500a;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="font-weight:600;font-size:14px;color:#fff;">Ask about my work</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.7);">AI-powered · Usually instant</div>
+      </div>
+      <button onclick="toggleChat()" style="background:none;border:none;color:#fff;font-size:18px;cursor:pointer;">✕</button>
+    </div>
+    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;height:340px;">
+      <div style="background:#2a2a2a;padding:10px 14px;border-radius:10px;font-size:13px;color:#ccc;max-width:85%;">
+        Hi! I'm David's AI assistant. Ask me about his automation projects, services, or how to work with him.
+      </div>
+    </div>
+    <div style="padding:12px;border-top:1px solid #2a2a2a;display:flex;gap:8px;">
+      <input id="chat-input" type="text" placeholder="Ask something..." onkeydown="if(event.key==='Enter')sendMessage()"
+        style="flex:1;background:#2a2a2a;border:none;border-radius:8px;padding:10px 14px;color:#fff;font-size:13px;outline:none;" />
+      <button onclick="sendMessage()"
+        style="background:#c8500a;border:none;border-radius:8px;padding:10px 14px;color:#fff;cursor:pointer;font-size:13px;font-weight:600;">→</button>
+    </div>
+  </div>
+  <button onclick="toggleChat()"
+    style="width:56px;height:56px;border-radius:50%;background:#c8500a;border:none;color:#fff;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(200,80,10,0.4);display:block;margin-left:auto;">💬</button>
+</div>
+
+<script>
+  const WEBHOOK_URL = 'https://n8n.srv1059170.hstgr.cloud//webhook/rag-chat';
+
+  function toggleChat() {
+    const box = document.getElementById('chat-box');
+    box.style.display = box.style.display === 'none' ? 'flex' : 'none';
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const messages = document.getElementById('chat-messages');
+    const text = input.value.trim();
+    if (!text) return;
+
+    messages.innerHTML += `<div style="background:#c8500a;padding:10px 14px;border-radius:10px;font-size:13px;color:#fff;max-width:85%;align-self:flex-end;margin-left:auto;">${text}</div>`;
+    input.value = '';
+    messages.innerHTML += `<div id="typing" style="background:#2a2a2a;padding:10px 14px;border-radius:10px;font-size:13px;color:#999;max-width:85%;">Thinking...</div>`;
+    messages.scrollTop = messages.scrollHeight;
+
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chatInput: text, sessionId: 'portfolio-visitor' })
+      });
+      const data = await res.json();
+      document.getElementById('typing').remove();
+      messages.innerHTML += `<div style="background:#2a2a2a;padding:10px 14px;border-radius:10px;font-size:13px;color:#ccc;max-width:85%;">${data.output}</div>`;
+    } catch (e) {
+      document.getElementById('typing').remove();
+      messages.innerHTML += `<div style="background:#2a2a2a;padding:10px 14px;border-radius:10px;font-size:13px;color:#f87171;max-width:85%;">Something went wrong. Try again.</div>`;
+    }
+    messages.scrollTop = messages.scrollHeight;
+  }
+</script>
+</body>
+</html>
