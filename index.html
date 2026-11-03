@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oladunjoye David Olusayo — Portfolio</title>
+<title>David Oladunjoye | Automation Engineer (n8n, AI Workflows)</title>
+<meta name="description" content="Automation engineer building production n8n and AI workflows, including an editor-approved newsroom pipeline that publishes 44 articles a day.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -328,7 +329,7 @@
   }
 
   /* ANIMATIONS */
-  .fade-up {
+  .js .fade-up {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -346,7 +347,14 @@
     .hero { padding: 110px 1.25rem 60px; }
     section { padding: 48px 1.25rem; }
   }
+  .feature-img { width: 100%; border: 1px solid var(--border); border-radius: 10px; margin: 6px 0 14px; background: #fff; display: block; }
+  .feature-links { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 14px; }
+  .link-btn { font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); }
+  .link-btn:hover { border-bottom-color: var(--accent); }
+  .fine { font-size: 13px; color: var(--ink-faint); margin-top: 1.75rem; }
+  .project-card.featured { border-color: var(--accent); }
 </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -362,18 +370,18 @@
 
 <!-- HERO -->
 <div class="hero fade-up visible">
-  <p class="hero-eyebrow">Available for remote work</p>
-  <h1>Automation.<br><em>Data. Words.</em><br>Delivered.</h1>
+  <p class="hero-eyebrow">Available for freelance and remote work</p>
+  <h1>Automation for<br><em>newsrooms</em> and<br>content teams.</h1>
   <p class="hero-desc">
-    Freelancer and educator based in Lagos &amp; Ibadan, Nigeria. I build intelligent workflows, process data accurately, and provide reliable remote support for teams across the globe.
+    I'm David Oladunjoye, an automation engineer in Lagos and Ibadan. I build production n8n workflows that monitor sources, draft content with AI, route it through human approval and publish it, including a pipeline that publishes 44 articles a day for a regional news publisher.
   </p>
   <div class="hero-tags">
     <span class="tag tag-teal">n8n Automation</span>
     <span class="tag tag-teal">AI Workflows</span>
-    <span class="tag tag-accent">Transcription</span>
-    <span class="tag tag-accent">Chat Operations</span>
-    <span class="tag tag-gray">B.Sc Microbiology</span>
-    <span class="tag tag-gray">HTML &amp; CSS</span>
+    <span class="tag tag-accent">Newsroom Automation</span>
+    <span class="tag tag-accent">RAG Agents</span>
+    <span class="tag tag-gray">WordPress API</span>
+    <span class="tag tag-gray">Human-in-the-Loop</span>
   </div>
   <div class="cta-row">
     <a href="#projects" class="btn btn-primary">View my work</a>
@@ -387,46 +395,35 @@
 <section id="services">
   <p class="section-label">What I offer</p>
   <h2 class="section-title">How I can help you</h2>
-  <p class="section-sub">Flexible, remote-ready services for individuals and growing teams.</p>
+  <p class="section-sub">Automation built to run every day, with humans in control of what goes out.</p>
   <div class="services-grid">
 
     <div class="service-card fade-up">
-      <div class="service-icon icon-teal">⚙️</div>
-      <h3>Workflow Automation</h3>
-      <p>Custom n8n automations that eliminate repetitive tasks — connecting your tools, processing data, and triggering actions automatically.</p>
+      <div class="service-icon icon-teal">📰</div>
+      <h3>Newsroom &amp; Content Automation</h3>
+      <p>Monitor dozens of sources, flag what matters, draft articles in your house style and publish to WordPress after editor approval.</p>
     </div>
 
     <div class="service-card fade-up">
       <div class="service-icon icon-teal">🤖</div>
       <h3>AI-Powered Systems</h3>
-      <p>Intelligent pipelines using large language models — content repurposing, lead scoring, smart email handling, and document processing.</p>
+      <p>LLM pipelines for scoring, rewriting, classification and multi-agent content production, with structured outputs and safe fallbacks.</p>
     </div>
 
     <div class="service-card fade-up">
-      <div class="service-icon icon-accent">💬</div>
-      <h3>Chat Operations</h3>
-      <p>Reliable, professional live chat support and moderation. Clear communicator with fast response times, available for remote roles.</p>
+      <div class="service-icon icon-accent">🧠</div>
+      <h3>RAG Knowledge Agents</h3>
+      <p>Chat assistants that answer from your own documents, built on Supabase pgvector or Pinecone depending on your scale and budget.</p>
     </div>
 
     <div class="service-card fade-up">
-      <div class="service-icon icon-accent">🎧</div>
-      <h3>Transcription</h3>
-      <p>Accurate audio and video transcription — interviews, meetings, podcasts, and lectures — with attention to detail and fast turnaround.</p>
-    </div>
-
-    <div class="service-card fade-up">
-      <div class="service-icon icon-gray">🔬</div>
-      <h3>Science Content</h3>
-      <p>Biology and science content creation backed by a B.Sc in Microbiology — suitable for educational platforms, blogs, and review tasks.</p>
-    </div>
-
-    <div class="service-card fade-up">
-      <div class="service-icon icon-gray">🖥️</div>
-      <h3>Web Basics (HTML/CSS)</h3>
-      <p>Simple, clean web pages and email templates. Comfortable with HTML and CSS for lightweight front-end tasks and layouts.</p>
+      <div class="service-icon icon-accent">⚙️</div>
+      <h3>Business Workflow Automation</h3>
+      <p>Lead scoring and CRM sync, document sorting, email drafting and reporting that connect your tools and remove repetitive work.</p>
     </div>
 
   </div>
+  <p class="fine">Also available for remote chat operations, audio transcription and science content.</p>
 </section>
 
 <hr class="divider">
@@ -435,72 +432,74 @@
 <section id="projects">
   <p class="section-label">Automation portfolio</p>
   <h2 class="section-title">Selected projects</h2>
-  <p class="section-sub">Built with n8n, integrated with real-world APIs and AI models.</p>
+  <p class="section-sub">Built with n8n and integrated with real-world APIs and AI models.</p>
   <div class="projects-list">
 
-    <div class="project-card fade-up">
+    <div class="project-card fade-up featured">
       <div class="project-num">01</div>
       <div class="project-body">
-        <h3>Slack Daily Summary Bot</h3>
-        <p>An automated workflow that aggregates key activity across channels and delivers a formatted daily digest to a Slack workspace — reducing information overload for distributed teams.</p>
-        <div class="project-tags">
-          <span class="ptag">n8n</span><span class="ptag">Slack API</span><span class="ptag">Scheduling</span><span class="ptag">Message Formatting</span>
+        <h3>Editorial Content Pipeline for a Regional News Publisher</h3>
+        <p>A production newsroom system that monitors RSS feeds, protected web pages, YouTube transcripts, X/web search and emailed bulletins, scores each story for relevance, rewrites it in the publisher's own voice, and sends it to an editor for one-click approval before publishing to WordPress. Daily quotas per section, duplicate detection, a breaking-news bypass, signed approval links with reminders, and a central error log keep it reliable. <strong>Result: 44 articles per day.</strong></p>
+        <img class="feature-img" src="architecture-diagram-anonymized.png" alt="Architecture diagram of the news automation pipeline: inputs, ingestion, shared data tables, processing, approval and WordPress publishing" loading="lazy">
+        <div class="feature-links">
+          <a class="link-btn" href="Newsroom_Automation_Case_Study_General.pdf" target="_blank">Download the one-page case study (PDF) &rarr;</a>
         </div>
+
+        <div class="project-tags"><span class="ptag">n8n</span><span class="ptag">OpenAI</span><span class="ptag">DeepSeek</span><span class="ptag">xAI Grok</span><span class="ptag">WordPress REST API</span><span class="ptag">Human-in-the-Loop</span><span class="ptag">RSS &amp; Scraping</span></div>
       </div>
     </div>
 
     <div class="project-card fade-up">
       <div class="project-num">02</div>
       <div class="project-body">
-        <h3>Lead Scoring CRM Automation</h3>
-        <p>Automatically scores and segments incoming leads based on defined criteria, then routes them to the appropriate CRM stage — enabling sales teams to prioritize high-value prospects.</p>
-        <div class="project-tags">
-          <span class="ptag">n8n</span><span class="ptag">CRM Integration</span><span class="ptag">Lead Scoring</span><span class="ptag">Data Routing</span>
-        </div>
+        <h3>Relay: 3-Stage HITL Content Pipeline</h3>
+        <p>A multi-agent content system with three specialised AI personas (strategist, writer and reviewer), each separated by a human approval gate. Built for n8n's May 2026 community challenge. Feedback accumulates across revisions so agents never repeat rejected work, and a three-way router sends content back to any stage based on the human's decision. Approved posts are logged to Google Sheets.</p>
+        <div class="project-tags"><span class="ptag">n8n</span><span class="ptag">Multi-agent AI</span><span class="ptag">GPT-4o</span><span class="ptag">Human-in-the-Loop</span><span class="ptag">Google Sheets</span></div>
       </div>
     </div>
 
     <div class="project-card fade-up">
       <div class="project-num">03</div>
       <div class="project-body">
-        <h3>AI Content Repurposer</h3>
-        <p>Takes a single piece of long-form content and uses an AI model to automatically generate platform-specific variants — blog post, LinkedIn update, Twitter thread, and email newsletter.</p>
-        <div class="project-tags">
-          <span class="ptag">n8n</span><span class="ptag">OpenAI</span><span class="ptag">Content Strategy</span><span class="ptag">Multi-platform</span>
-        </div>
+        <h3>RAG Knowledge Agents</h3>
+        <p>Two retrieval-augmented agents built on different vector stacks: Supabase pgvector (self-managed, low storage cost) and Pinecone (managed, higher recall at scale). Built to answer questions from private documents with grounded, source-based replies.</p>
+        <div class="project-tags"><span class="ptag">n8n</span><span class="ptag">Supabase pgvector</span><span class="ptag">Pinecone</span><span class="ptag">RAG</span></div>
       </div>
     </div>
 
     <div class="project-card fade-up">
       <div class="project-num">04</div>
       <div class="project-body">
-        <h3>Smart Email Assistant</h3>
-        <p>An AI-powered inbox workflow that classifies incoming emails by intent, drafts context-aware replies, and flags urgent messages — cutting email management time significantly.</p>
-        <div class="project-tags">
-          <span class="ptag">n8n</span><span class="ptag">Gmail API</span><span class="ptag">AI Classification</span><span class="ptag">Draft Generation</span>
-        </div>
+        <h3>Lead Scoring CRM Automation</h3>
+        <p>Webhook-triggered lead qualification. Each lead is scored 1 to 10 with a High, Medium or Low band and a written reasoning trail, then routed to the right CRM stage so sales teams see why a lead was prioritised.</p>
+        <div class="project-tags"><span class="ptag">n8n</span><span class="ptag">OpenAI</span><span class="ptag">Structured Output</span><span class="ptag">Google Sheets</span></div>
       </div>
     </div>
 
     <div class="project-card fade-up">
       <div class="project-num">05</div>
       <div class="project-body">
-        <h3>Document Processing Pipeline</h3>
-        <p>Extracts, structures, and routes information from uploaded documents (PDFs, forms) using AI — automating data entry and downstream actions without manual review.</p>
-        <div class="project-tags">
-          <span class="ptag">n8n</span><span class="ptag">PDF Extraction</span><span class="ptag">AI Parsing</span><span class="ptag">Data Pipeline</span>
-        </div>
+        <h3>Smart Email Assistant</h3>
+        <p>A Gmail-triggered workflow that classifies incoming emails by intent and drafts tone-matched replies as Gmail drafts. It never auto-sends, so a human stays in control.</p>
+        <div class="project-tags"><span class="ptag">n8n</span><span class="ptag">Gmail API</span><span class="ptag">AI Classification</span><span class="ptag">Draft Generation</span></div>
       </div>
     </div>
 
     <div class="project-card fade-up">
       <div class="project-num">06</div>
       <div class="project-body">
-        <h3>Relay — 3-Stage HITL Content Pipeline</h3>
-        <p>A multi-agent AI content production system featuring three specialised AI personas (Sofia, Marcus, Taylor) operating as a real creative team — each separated by a human approval gate. Built for n8n's May Monthly Challenge. Sofia proposes content angles, Marcus writes the draft, and Taylor handles final QC — with intelligent feedback loops that route content back to any stage based on human decisions. Approved posts are automatically logged to Google Sheets.</p>
-        <div class="project-tags">
-          <span class="ptag">n8n</span><span class="ptag">Multi-agent AI</span><span class="ptag">GPT-4o</span><span class="ptag">Human-in-the-Loop</span><span class="ptag">Google Sheets</span><span class="ptag">Content Automation</span>
-        </div>
+        <h3>Document Processing Pipeline</h3>
+        <p>A Google Drive watcher that categorises incoming files (invoice, contract, resume, report, receipt), suggests consistent file names and routes each file to the right folder, handling unknown file types gracefully.</p>
+        <div class="project-tags"><span class="ptag">n8n</span><span class="ptag">Google Drive</span><span class="ptag">OpenAI</span><span class="ptag">Data Pipeline</span></div>
+      </div>
+    </div>
+
+    <div class="project-card fade-up">
+      <div class="project-num">07</div>
+      <div class="project-body">
+        <h3>AI Content Repurposer</h3>
+        <p>Takes one piece of long-form content and generates platform-specific versions in parallel, such as a Twitter thread and a LinkedIn post, from a single blog post.</p>
+        <div class="project-tags"><span class="ptag">n8n</span><span class="ptag">OpenAI</span><span class="ptag">Parallel Agents</span><span class="ptag">Content Strategy</span></div>
       </div>
     </div>
 
@@ -518,40 +517,36 @@
       <h4>Automation</h4>
       <ul class="skill-list">
         <li>n8n (self-hosted)</li>
-        <li>Webhook integration</li>
-        <li>API connections</li>
-        <li>Workflow scheduling</li>
-        <li>Error handling</li>
+        <li>Webhooks and scheduling</li>
+        <li>Error handling and audit logs</li>
+        <li>Make, Zapier</li>
       </ul>
     </div>
     <div class="skill-group">
       <h4>AI &amp; Data</h4>
       <ul class="skill-list">
-        <li>OpenAI / Claude APIs</li>
-        <li>Prompt engineering</li>
-        <li>Data transformation</li>
-        <li>JSON processing</li>
-        <li>Document extraction</li>
+        <li>OpenAI, Claude, DeepSeek, Grok</li>
+        <li>Structured JSON output</li>
+        <li>RAG (pgvector, Pinecone)</li>
+        <li>Prompt design</li>
       </ul>
     </div>
     <div class="skill-group">
-      <h4>Remote Services</h4>
+      <h4>Publishing &amp; APIs</h4>
       <ul class="skill-list">
-        <li>Live chat support</li>
-        <li>Audio transcription</li>
-        <li>Content moderation</li>
-        <li>Data entry</li>
-        <li>Research assistance</li>
+        <li>WordPress REST API</li>
+        <li>RSS and HTML scraping</li>
+        <li>YouTube API</li>
+        <li>Google Workspace, HubSpot</li>
       </ul>
     </div>
     <div class="skill-group">
       <h4>Other</h4>
       <ul class="skill-list">
-        <li>HTML &amp; CSS</li>
+        <li>JavaScript, Python</li>
         <li>B.Sc Microbiology</li>
-        <li>Science writing</li>
+        <li>Technical documentation</li>
         <li>Physics &amp; Maths tuition</li>
-        <li>Microsoft Office</li>
       </ul>
     </div>
   </div>
@@ -565,22 +560,22 @@
   <h2 class="section-title">About me</h2>
   <div class="about-grid">
     <div>
-      <p>I'm Oladunjoye David Olusayo — a freelance automation specialist and educator based in Lagos and Ibadan, Nigeria. I hold a Bachelor's degree in Microbiology and have since built a parallel career in intelligent workflow automation using n8n and AI-powered tools.</p>
-      <p>Alongside my technical work, I teach Physics and Mathematics to secondary school students, which has sharpened my ability to communicate complex ideas clearly — a skill I bring to every client engagement.</p>
-      <p>I'm available for remote positions in automation, chat operations, transcription, and content work. I'm reliable, self-directed, and comfortable working across time zones.</p>
+      <p>I'm David Oladunjoye, an automation engineer based in Lagos and Ibadan, Nigeria. I hold a B.Sc in Microbiology and built a parallel career in AI-powered workflow automation with n8n.</p>
+      <p>My most recent work is a newsroom pipeline for a regional news publisher: it ingests dozens of sources, scores and rewrites stories, and publishes 44 articles a day after editor approval. I like building systems that stay reliable and keep a human in charge of what goes live.</p>
+      <p>I completed national service in October 2026 as a biology and digital technology teacher, which sharpened how clearly I explain technical work to non-technical people. I'm available for freelance projects and remote roles, and comfortable working across time zones.</p>
     </div>
     <div class="about-stats">
       <div class="stat-row">
-        <div class="stat-val">5+</div>
-        <div class="stat-label">Automation workflows built</div>
+        <div class="stat-val">44</div>
+        <div class="stat-label">Articles per day in production</div>
       </div>
       <div class="stat-row">
-        <div class="stat-val">B.Sc</div>
-        <div class="stat-label">Microbiology, University graduate</div>
+        <div class="stat-val">25+</div>
+        <div class="stat-label">News and video sources monitored</div>
       </div>
       <div class="stat-row">
-        <div class="stat-val">n8n</div>
-        <div class="stat-label">Self-hosted automation platform</div>
+        <div class="stat-val">1-click</div>
+        <div class="stat-label">Editor approval before publishing</div>
       </div>
       <div class="stat-row">
         <div class="stat-val">GMT+1</div>
@@ -597,42 +592,46 @@
   <div class="contact-inner fade-up">
     <div>
       <h2 class="section-title">Let's work together</h2>
-      <p>Open to freelance projects, remote roles, and long-term contracts. Reach out and I'll respond within 24 hours.</p>
+      <p>Open to freelance projects, remote roles and long-term contracts. Reach out and I'll respond within 24 hours.</p>
     </div>
     <div class="contact-links">
       <a href="mailto:oladunjoyedavid39@gmail.com" class="contact-link">
         <span>✉</span> oladunjoyedavid39@gmail.com
       </a>
-      <a href="https://www.upwork.com/freelancers/~01640a0a72bae56ff5" class="contact-link" target="_blank">
+      <a href="https://wa.me/2349130741696" class="contact-link" target="_blank" rel="noopener">
+        <span>↗</span> WhatsApp: +234 913 074 1696
+      </a>
+      <a href="https://www.linkedin.com/in/david-oladunjoye-5b3476227" class="contact-link" target="_blank" rel="noopener">
+        <span>↗</span> LinkedIn
+      </a>
+      <a href="https://www.upwork.com/freelancers/~018d5acb73098a97e2" class="contact-link" target="_blank" rel="noopener">
         <span>↗</span> Upwork profile
       </a>
-      <a href="https://www.fiverr.com/users/timiverse/seller_dashboard" class="contact-link" target="_blank">
+      <a href="https://www.fiverr.com/timiverse" class="contact-link" target="_blank" rel="noopener">
         <span>↗</span> Fiverr profile
-      </a>
-      <a href="#" class="contact-link">
-        <span>📍</span> Lagos &amp; Ibadan, Nigeria
       </a>
     </div>
   </div>
 </section>
 
 <footer>
-  &copy; 2025 Oladunjoye David Olusayo · Built for freelance use
+  &copy; 2026 David Oladunjoye · Automation Engineer · Lagos &amp; Ibadan, Nigeria
 </footer>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+<script>
+  (function () {
+    var els = document.querySelectorAll('.fade-up');
+    function showAll() { els.forEach(function (el) { el.classList.add('visible'); }); }
+    if (!('IntersectionObserver' in window)) { showAll(); return; }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.05 });
+    els.forEach(function (el) { observer.observe(el); });
+    setTimeout(showAll, 2500);
+  })();
 </script>
 <div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:1000;font-family:'DM Sans',sans-serif;">
   <div id="chat-box" style="display:none;width:340px;height:460px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;overflow:hidden;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.4);">
@@ -667,13 +666,15 @@
     box.style.display = box.style.display === 'none' ? 'flex' : 'none';
   }
 
+  function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
   async function sendMessage() {
     const input = document.getElementById('chat-input');
     const messages = document.getElementById('chat-messages');
     const text = input.value.trim();
     if (!text) return;
 
-    messages.innerHTML += `<div style="background:#c8500a;padding:10px 14px;border-radius:10px;font-size:13px;color:#fff;max-width:85%;align-self:flex-end;margin-left:auto;">${text}</div>`;
+    messages.innerHTML += `<div style="background:#c8500a;padding:10px 14px;border-radius:10px;font-size:13px;color:#fff;max-width:85%;align-self:flex-end;margin-left:auto;">${esc(text)}</div>`;
     input.value = '';
     messages.innerHTML += `<div id="typing" style="background:#2a2a2a;padding:10px 14px;border-radius:10px;font-size:13px;color:#999;max-width:85%;">Thinking...</div>`;
     messages.scrollTop = messages.scrollHeight;
@@ -686,7 +687,7 @@
       });
       const data = await res.json();
       document.getElementById('typing').remove();
-      messages.innerHTML += `<div style="background:#2a2a2a;padding:10px 14px;border-radius:10px;font-size:13px;color:#ccc;max-width:85%;">${data.output}</div>`;
+      messages.innerHTML += `<div style="background:#2a2a2a;padding:10px 14px;border-radius:10px;font-size:13px;color:#ccc;max-width:85%;">${esc(data.output)}</div>`;
     } catch (e) {
       document.getElementById('typing').remove();
       messages.innerHTML += `<div style="background:#2a2a2a;padding:10px 14px;border-radius:10px;font-size:13px;color:#f87171;max-width:85%;">Something went wrong. Try again.</div>`;
